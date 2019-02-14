@@ -1,4 +1,4 @@
-package com.umut.soysal.swipelayoutview;
+package com.umut.soysal.swipeview;
 
 import org.junit.Test;
 
