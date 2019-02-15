@@ -31,6 +31,8 @@ StackImageView offers five padding attributes to position content within the car
 
 <img src="image/design.png" width="620" height="300"/>
 
+In this layout example, the StackImageView namespace is the prefix for radius:
+
 ```xml
  <com.umut.soysal.swipelayoutview.ui.StackImageView
                 android:id="@+id/iv_avatar"
