@@ -1,6 +1,9 @@
 # SwipeView
 A Tinder style Swipeable view for Android Library
 
+## Demo
+<img src="image/app.gif" width="300" height="490"/>
+
 ## Download
 
 ```gradle
