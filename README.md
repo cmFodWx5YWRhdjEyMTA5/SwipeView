@@ -5,7 +5,7 @@
 
 A Tinder style StackSwipeview gesture library
 
-Support for Android 5.0 and up. It might work on lower API versions, but I haven't tested it and I don't intend to
+Support for Api version 15 and up. It might work on lower API versions, but I haven't tested it and I don't intend to
 make any effort in that direction.
 
 # Overview
