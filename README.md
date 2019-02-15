@@ -31,10 +31,6 @@ dependencies {
                 android:scaleType="centerCrop"
                 app:radius="10dp"
                 android:src="@drawable/img_avatar_01" />
-        
-        <!-- Your content here -->
-        
-</iammert.com.view.scalinglib.ScalingLayout>
 ```
 
 
