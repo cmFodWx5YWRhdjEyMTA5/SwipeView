@@ -13,6 +13,7 @@ import android.widget.Toast;
 import com.umut.soysal.swipelayoutview.helper.StackItemTouchHelperCallback;
 import com.umut.soysal.swipelayoutview.manager.StackLayoutViewManager;
 import com.umut.soysal.swipelayoutview.ui.OnSwipeListener;
+import com.umut.soysal.swipelayoutview.ui.StackImageView;
 import com.umut.soysal.swipelayoutview.util.Utility;
 
 import java.util.ArrayList;
@@ -33,13 +34,13 @@ public class MainActivity extends AppCompatActivity {
     private void initView() {
         final RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.setAdapter(new MyAdapter());
+        recyclerView.setAdapter(new StackViewAdapter());
         StackItemTouchHelperCallback cardCallback = new StackItemTouchHelperCallback(recyclerView.getAdapter(), list);
         cardCallback.setOnSwipedListener(new OnSwipeListener<Integer>() {
 
             @Override
             public void onSwiping(RecyclerView.ViewHolder viewHolder, float ratio, int direction) {
-                MyAdapter.MyViewHolder myHolder = (MyAdapter.MyViewHolder) viewHolder;
+                StackViewAdapter.MyViewHolder myHolder = (StackViewAdapter.MyViewHolder) viewHolder;
                 viewHolder.itemView.setAlpha(1 - Math.abs(ratio) * 0.2f);
                 if (direction == Utility.SWIPING_LEFT) {
                     myHolder.dislikeImageView.setAlpha(Math.abs(ratio));
@@ -53,16 +54,16 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onSwiped(RecyclerView.ViewHolder viewHolder, Integer o, int direction) {
-                MyAdapter.MyViewHolder myHolder = (MyAdapter.MyViewHolder) viewHolder;
+                StackViewAdapter.MyViewHolder myHolder = (StackViewAdapter.MyViewHolder) viewHolder;
                 viewHolder.itemView.setAlpha(1f);
                 myHolder.dislikeImageView.setAlpha(0f);
                 myHolder.likeImageView.setAlpha(0f);
-                Toast.makeText(MainActivity.this, direction == Utility.SWIPED_LEFT ? "like" : "no like", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, direction == Utility.SWIPED_LEFT ? "dislike" : "like", Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onSwipedClear() {
-                Toast.makeText(MainActivity.this, "data clear", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "finish data", Toast.LENGTH_SHORT).show();
                 recyclerView.postDelayed(new Runnable() {
                     @Override
                     public void run() {
@@ -90,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private class MyAdapter extends RecyclerView.Adapter {
+    private class StackViewAdapter extends RecyclerView.Adapter {
         @Override
         public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item, parent, false);
@@ -110,13 +111,13 @@ public class MainActivity extends AppCompatActivity {
 
         class MyViewHolder extends RecyclerView.ViewHolder {
 
-            ImageView avatarImageView;
+            StackImageView avatarImageView;
             ImageView likeImageView;
             ImageView dislikeImageView;
 
             MyViewHolder(View itemView) {
                 super(itemView);
-                avatarImageView = (ImageView) itemView.findViewById(R.id.iv_avatar);
+                avatarImageView = (StackImageView) itemView.findViewById(R.id.iv_avatar);
                 likeImageView = (ImageView) itemView.findViewById(R.id.iv_like);
                 dislikeImageView = (ImageView) itemView.findViewById(R.id.iv_dislike);
             }
