@@ -86,6 +86,22 @@ cardCallback.setOnSwipedListener(new OnSwipeListener<T>() {
 });
 ```
 
+### step 3
+``` java
+/*
+*Create stack photoview list
+*/
+ private void initData() {
+        list.add(R.drawable.img_avatar_01);
+        list.add(R.drawable.img_avatar_02);
+        list.add(R.drawable.img_avatar_03);
+        list.add(R.drawable.img_avatar_04);
+        list.add(R.drawable.img_avatar_05);
+        list.add(R.drawable.img_avatar_06);
+        list.add(R.drawable.img_avatar_07);
+
+    }
+```
 
 License
 --------
