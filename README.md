@@ -27,6 +27,10 @@ dependencies {
 ```
 ## StackImageView
 
+StackImageView offers five padding attributes to position content within the card. You can set them in your layout XML or you can call analogous methods in your code:
+
+<img src="image/design.png" width="620" height="300"/>
+
 ```xml
  <com.umut.soysal.swipelayoutview.ui.StackImageView
                 android:id="@+id/iv_avatar"
