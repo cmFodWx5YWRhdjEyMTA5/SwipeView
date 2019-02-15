@@ -15,8 +15,7 @@ dependencies {
   implementation 'com.github.umutsoysl:SwipeView:1.0'
 }
 ```
-## ScalingLayoutBehaviour
-<img src="https://github.com/iammert/ScalingLayout/blob/master/art/gif_behavior.gif"/>
+## StackImageView
 
 ```xml
  <com.umut.soysal.swipelayoutview.ui.StackImageView
