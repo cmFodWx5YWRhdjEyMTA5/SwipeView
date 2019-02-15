@@ -8,10 +8,10 @@ A Tinder style StackSwipeview gesture library
 Support for Android 5.0 and up. It might work on lower API versions, but I haven't tested it and I don't intend to
 make any effort in that direction.
 
-## Demo
+# Overview
 <img src="image/app.gif" width="300" height="490"/>
 
-## Setup
+# Setup
 
 * **Grade**  
 Add it as a dependency to your `build.gradle`
